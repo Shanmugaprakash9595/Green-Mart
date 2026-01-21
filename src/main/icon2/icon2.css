@@ -1,0 +1,21 @@
+.features {
+  display: flex;
+  justify-content: space-around;
+  /* background: #e8f8ea; */
+  background: #e1e9b6;
+  padding: 35px;
+  margin-bottom: 50px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+  color: #1b5e3c;
+}
+
+.feature i {
+  font-size: 42px;
+  color: #f9a825;
+}

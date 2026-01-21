@@ -1,0 +1,79 @@
+/* MAIN NAVBAR */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  position: relative;   /* important */
+}
+
+/* LOGO */
+.logo {
+  text-decoration: none;
+  color: green;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* SEARCH BAR */
+.search {
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* RIGHT SECTION */
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right span,
+.right a {
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #222;
+  font-size: 18px;
+}
+
+/* ========================= */
+/* CATEGORY ITEMS FIX */
+/* ========================= */
+
+.items {
+  position: absolute;          /* nav-ku keezha varum */
+  left: 0;
+  bottom: -55px;               /* navbar keezha */
+  width: 100%;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+/* REMOVE EXTRA NAV STYLE */
+.items nav {
+  width: 100%;
+}
+
+.items ul {
+  display: flex;
+  justify-content: center;     /* ⭐ CENTER ALIGN */
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 12px 30px;
+  margin: 0;
+}
+
+.items li {
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.items li:hover {
+  color: green;
+}
