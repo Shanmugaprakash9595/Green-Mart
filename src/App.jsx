@@ -35,7 +35,7 @@
 
 // function App() {
 //   return (
-  
+
 
 
 
@@ -55,11 +55,11 @@
 //           <Icon1 />
 //           <Ad />
 //           <Brand />
-          
 
 
 
-          
+
+
 
 
 //           {/* Routes */}
@@ -71,27 +71,27 @@
 
 //             <Route path="/checkout"
 //               element={
-                
+
 //                   <Checkout />
-                
+
 //               }
 //             />
 
 //             <Route
 //               path="/payment"
 //               element={
-              
+
 //                   <Payment />
-                
+
 //               }
 //             />
 
 //             <Route
 //               path="/order-success"
 //               element={
-                
+
 //                   <OrderSuccess />
-                
+
 //               }
 //             />
 
@@ -105,7 +105,7 @@
 
 
 
-    
+
 
 //   );
 // }
@@ -151,65 +151,137 @@ import OrderSuccess from "./pages/OrderSuccess";
 
 
 
-function App() {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
+// function App() {
+//   const location = useLocation();
+//   // const isHome = location.pathname === "/";
+//   const isHome =
+//     location.pathname === "/" ||
+//     location.pathname === "/Green-Mart/";
 
+
+//   return (
+//     <AuthProvider>
+//       <CartProvider>
+
+//         {/* NAVBAR – ALL PAGES */}
+//         <Navbar />
+
+//         {/* HOME PAGE CONTENT ONLY */}
+//         {isHome && (
+//           <>
+//             <Count />
+//             <Categories />
+//             <Icon2 />
+//             <Home />
+//             <Articles />
+//             <Icon1 />
+//             <Ad />
+//             <Brand />
+//             <Home />
+
+//           </>
+//         )}
+
+//         {/* ROUTES */}
+//         <Routes>
+//           <Route
+//             path="/"
+//             element={
+//               <>
+//                 <Count />
+//                 <Categories />
+//                 <Icon2 />
+//                 <Home />
+//                 <Articles />
+//                 <Icon1 />
+//                 <Ad />
+//                 <Brand />
+//               </>
+//             }
+//           />
+
+//           <Route path="/login" element={<Login />} />
+//           <Route path="/register" element={<Register />} />
+
+//           <Route path="/checkout" element={<Checkout />} />
+//           <Route path="/payment" element={<Payment />} />
+//           <Route path="/order-success" element={<OrderSuccess />} />
+//           <Route path="/seeds" element={<Over />} />
+//           <Route path="fer" element={<Over />} />
+//           <Route path="pla" element={<Over />} />
+//           <Route path="fun" element={<Over />} />
+//           <Route path="in" element={<Over />} />
+//           <Route path="ani" element={<Over />} />
+//           <Route path="mac" element={<Over />} />
+//           <Route path="eq" element={<Over />} />
+//           {/* <Route path="/see" element={<Product />} /> */}
+
+
+
+//         </Routes>
+
+//         {/* CART SIDEBAR – ALL PAGES */}
+//         <CartSidebar />
+
+//         {/* FOOTER – ALL PAGES */}
+//         <Footer />
+
+//       </CartProvider>
+//     </AuthProvider>
+//   );
+// }
+
+// export default App;
+
+
+
+function App() {
   return (
     <AuthProvider>
       <CartProvider>
 
-        {/* NAVBAR – ALL PAGES */}
         <Navbar />
 
-        {/* HOME PAGE CONTENT ONLY */}
-        {isHome && (
-          <>
-            <Count />
-            <Categories />
-            <Icon2 />
-            <Home />
-            <Articles />
-            <Icon1 />
-            <Ad />
-            <Brand />
-            <Home />
-            
-          </>
-        )}
-
-        {/* ROUTES */}
         <Routes>
-          
+
+          {/* HOME PAGE */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Count />
+                <Categories />
+                <Icon2 />
+                <Home />
+                <Articles />
+                <Icon1 />
+                <Ad />
+                <Brand />
+              </>
+            }
+          />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/order-success" element={<OrderSuccess />} />
-          <Route path="/seeds" element={<Over />} />
-          <Route path="fer" element={<Over />} />
-          <Route path="pla" element={<Over />} />
-          <Route path="fun" element={<Over />} />
-          <Route path="in" element={<Over />} />
-          <Route path="ani" element={<Over />} />
-          <Route path="mac" element={<Over />} />
-          <Route path="eq" element={<Over />} />
-           {/* <Route path="/see" element={<Product />} /> */}
-          
 
-          
+          <Route path="/seeds" element={<Over />} />
+          <Route path="/fer" element={<Over />} />
+          <Route path="/pla" element={<Over />} />
+          <Route path="/fun" element={<Over />} />
+          <Route path="/in" element={<Over />} />
+          <Route path="/ani" element={<Over />} />
+          <Route path="/mac" element={<Over />} />
+          <Route path="/eq" element={<Over />} />
+
         </Routes>
 
-        {/* CART SIDEBAR – ALL PAGES */}
         <CartSidebar />
-
-        {/* FOOTER – ALL PAGES */}
         <Footer />
 
       </CartProvider>
     </AuthProvider>
   );
 }
-
-export default App;
