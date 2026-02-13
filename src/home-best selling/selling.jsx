@@ -5,7 +5,7 @@ const products = [
     {
         id: 1,
         off: "22% OFF",
-        img: "offer1.webp",
+        img: `${import.meta.env.BASE_URL}offer1.webp`,
         title: "Acrobat Fungicide – Dimethomorph 50% WP",
         brand: "BASF",
         price: 663,
@@ -16,7 +16,7 @@ const products = [
     {
         id: 2,
         off: "48% OFF",
-        img: "offer2.webp",
+        img: `${import.meta.env.BASE_URL}offer2.webp`,
         title: "Katyayani NPK 19:19:19 – Water Soluble",
         brand: "Katyayani Organics",
         price: 343,
@@ -27,7 +27,7 @@ const products = [
     {
         id: 3,
         off: "61% OFF",
-        img: "offer3.webp",
+        img: `${import.meta.env.BASE_URL}offer3.webp`,
         title: "Geolife No-Virus – Improves Immunity",
         brand: "Geolife Agritech",
         price: 271,
@@ -38,7 +38,7 @@ const products = [
     {
         id: 4,
         off: "26% OFF",
-        img: "veg seeds.jpg",
+        img: `${import.meta.env.BASE_URL}veg seeds.jpg`,
         title: "Simodis Insecticide – Broad Spectrum",
         brand: "Syngenta",
         price: 759,
