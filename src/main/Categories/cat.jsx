@@ -1,47 +1,37 @@
-import React from 'react'
 import "./cat.css";
-import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
+const base = import.meta.env.BASE_URL;
 
 const categories = [
-  {title: "Vegetables Seeds",img: "/veg seeds.jpg",},
-  {title: "Fruit Seeds", img: "/fruit seeds.webp",},
-  {title: "Organic Fertilizers", img: "/Organic Fertilize.webp",},
-  {title: "Farm Machinery", img: "/farm machinery.webp",},
-  {title: "Flowers Seeds", img: "/flower seed.webp",},
-  {title: "Animal Husbandry",img: "/ani.webp",},
-  {title: "Fungicides",img: "/fun.webp",},
-  {title: "Plant Nutrition",img: "/nun.webp",},
-  {title: "Insecticides & Pesticides",img: "/ins.webp",},
-  {title: "Equipments",img: "/eq.webp",}];
-  
+  { title: "Vegetable Seeds", img: "veg-seeds.jpg", to: "/seeds" },
+  { title: "Fruit Seeds", img: "fruit seeds.webp", to: "/seeds" },
+  { title: "Organic Fertilizers", img: "Organic Fertilize.webp", to: "/fer" },
+  { title: "Farm Machinery", img: "farm machinery.webp", to: "/mac" },
+  { title: "Flower Seeds", img: "flower seed.webp", to: "/seeds" },
+  { title: "Animal Husbandry", img: "ani.webp", to: "/ani" },
+  { title: "Fungicides", img: "fun.webp", to: "/fun" },
+  { title: "Plant Nutrition", img: "nun.webp", to: "/pla" },
+  { title: "Insecticides", img: "ins.webp", to: "/in" },
+  { title: "Equipments", img: "eq.webp", to: "/eq" },
+];
 
 function Categories() {
-
-
   return (
-    <div className="category-section">
+    <section className="category-section">
       <h2 className="title">Categories</h2>
-    
-<hr class="line" />
-
+      <hr className="line" />
 
       <div className="category-list">
-        {categories.map((item, index) => (
-          <div
-            className="category-card"
-            key={index}
-          >
-            <img src={item.img} alt={item.title} />
+        {categories.map((item) => (
+          <Link className="category-card" key={item.title} to={item.to}>
+            <img src={`${base}${item.img}`} alt={item.title} />
             <p>{item.title}</p>
-          </div>
+          </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
-
 export default Categories;
-
-
-

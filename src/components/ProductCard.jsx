@@ -1,33 +1,41 @@
-
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import ProductModal from "./ProductModal";
 import "./ProductCard.css";
 
+const base = import.meta.env.BASE_URL;
+
 export default function ProductCard({ data }) {
   const [open, setOpen] = useState(false);
-  const { addToCart } = useContext(CartContext); // Only cart is used
+  const { addToCart } = useContext(CartContext);
+
+  const handleQuickAdd = () => {
+    addToCart({ ...data, qty: 1, size: data.sizes?.[0] ?? "Default" });
+  };
 
   return (
-    <div className="card">
+    <article className="card">
       <p className="off">{data.off}</p>
-      <img src={data.image} alt="" onClick={() => setOpen(true)} />
+      <img src={`${base}${data.image}`} alt={data.name} onClick={() => setOpen(true)} />
+
       <div className="gap">
         <h4>{data.name}</h4>
         <p className="brand">{data.brand}</p>
         <p className="price">
-          ₹{data.price} <span>₹{data.mrp}</span>
+          Rs {data.price} <span>Rs {data.mrp}</span>
         </p>
       </div>
 
       <div className="actions">
-        <button className="cart-btn" onClick={() => addToCart(data)}>
-           Add to Cart
+        <button className="cart-btn" type="button" onClick={handleQuickAdd}>
+          Add to Cart
         </button>
-        <button className="view" onClick={() => setOpen(true)}>View</button>
+        <button className="view" type="button" onClick={() => setOpen(true)}>
+          View
+        </button>
       </div>
 
       {open && <ProductModal product={data} close={() => setOpen(false)} />}
-    </div>
+    </article>
   );
 }

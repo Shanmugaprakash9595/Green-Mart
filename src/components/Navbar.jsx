@@ -1,55 +1,69 @@
-
-import { useContext, useState } from "react";
+import { useContext, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { AuthContext } from "../context/AuthContext";
 import "./Navbar.css";
 
-export default function Navbar(){
+const navItems = [
+  { label: "Home", to: "/" },
+  { label: "Seeds", to: "/seeds" },
+  { label: "Fertilizers", to: "/fer" },
+  { label: "Plant Nutrition", to: "/pla" },
+  { label: "Fungicides", to: "/fun" },
+  { label: "Insecticides", to: "/in" },
+  { label: "Animal Husbandry", to: "/ani" },
+  { label: "Machinery", to: "/mac" },
+  { label: "Equipments", to: "/eq" },
+];
+
+export default function Navbar({ searchQuery, setSearchQuery }) {
   const { cart, setOpen } = useContext(CartContext);
   const { user, logout } = useContext(AuthContext);
-  const [search, setSearch] = useState("");
 
-  return(
-    <nav className="nav">
-      <div className="logo">Green Mart</div>
+  const visibleItems = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return navItems;
+    return navItems.filter((item) => item.label.toLowerCase().includes(query));
+  }, [searchQuery]);
 
-      <input 
-        className="search" 
-        placeholder="Search..."
-        onChange={(e)=>setSearch(e.target.value)}
-      />
+  return (
+    <header className="nav-wrap">
+      <nav className="nav">
+        <Link className="logo" to="/">
+          Green Mart
+        </Link>
 
-      <div className="right">
-        {user ? (
-          <span onClick={logout} style={{cursor:"pointer"}}>👤 Logout</span>
-        ) : (
-          <Link to="/login"><i class="fa-solid fa-user"></i> Login</Link>
-        )}
+        <input
+          className="search"
+          placeholder="Search product..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
 
+        <div className="right">
+          {user ? (
+            <button className="text-btn" type="button" onClick={logout}>
+              Logout
+            </button>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
 
-    
-
-        <span onClick={()=>setOpen(true)} style={{cursor:"pointer"}}>
-           <i class="fa-solid fa-cart-shopping"></i> {cart.length}
-        </span>
-        <div className="items">
-          <nav>
-            <ul>
-               <li> <Link to="/">Home</Link></li>
-              <li><Link to ="seeds">Seeds</Link></li>
-              <li>< Link to ="fer">Fertilizers</Link></li>
-              <li>< Link to ="pla">Plant Nutrition</Link></li>
-              <li>< Link to ="fun">Fungicides</Link></li>
-              <li>< Link to ="in">Insecticides & Pesticides</Link></li>
-              <li>< Link to ="ani">Animal Husbandry</Link></li>
-              <li>< Link to ="mac">Farm Machinery</Link></li>
-              <li>< Link to ="eq">Equipments</Link></li>
-
-            </ul>
-          </nav>
+          <button className="text-btn cart-count" type="button" onClick={() => setOpen(true)}>
+            Cart ({cart.length})
+          </button>
         </div>
+      </nav>
+
+      <div className="items">
+        <ul>
+          {visibleItems.map((item) => (
+            <li key={item.to}>
+              <Link to={item.to}>{item.label}</Link>
+            </li>
+          ))}
+        </ul>
       </div>
-    </nav>
+    </header>
   );
 }

@@ -1,17 +1,12 @@
-import React from "react";
 import "./footer.css";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-top">
-
         <div className="footer-col logo-col">
           <h2 className="logo">Green Mart</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur <br />
-            adipiscing elit, sed do eiusmod tempor.
-          </p>
+          <p>Trusted agri store for seeds, nutrition, crop protection, and farm essentials.</p>
         </div>
 
         <div className="footer-col">
@@ -37,14 +32,13 @@ function Footer() {
             <li>Other Issues</li>
           </ul>
         </div>
-        
 
         <div className="footer-col">
           <h3>Contacts</h3>
           <ul className="contact">
-            <li><i class="fa-solid fa-location-dot"></i>Kovilpatti, Thoothukudi</li>
-            <li><i class="fa-solid fa-phone"></i> +91 93400 00000</li>
-            <li><i class="fa-solid fa-message"></i>greenmart@gmail.com</li>
+            <li>Address: Kovilpatti, Thoothukudi</li>
+            <li>Phone: +91 93400 00000</li>
+            <li>Email: greenmart@gmail.com</li>
           </ul>
         </div>
 
@@ -58,12 +52,11 @@ function Footer() {
             <li>Sale Products</li>
           </ul>
         </div>
-
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 Green Mart. All Rights Reserved.</p>
-        <p>Terms & Conditions | Privacy Policy</p>
+        <p>Copyright 2026 Green Mart. All rights reserved.</p>
+        <p>Terms and Conditions | Privacy Policy</p>
       </div>
     </footer>
   );

@@ -6,9 +6,23 @@ export const CartProvider = ({children}) => {
   const [open, setOpen] = useState(false);
 
   const addToCart = (item)=>{
-    const found = cart.find(p => p.id===item.id && p.size===item.size);
-    if(found){ found.qty += item.qty; setCart([...cart]); }
-    else setCart([...cart, item]);
+    const normalizedItem = {
+      ...item,
+      qty: item.qty ?? 1,
+      size: item.size ?? item.sizes?.[0] ?? "Default",
+    };
+
+    const found = cart.find(
+      (p) => p.id === normalizedItem.id && p.size === normalizedItem.size
+    );
+
+    if (found) {
+      found.qty += normalizedItem.qty;
+      setCart([...cart]);
+    } else {
+      setCart([...cart, normalizedItem]);
+    }
+
     setOpen(true);
   };
   const updateQty = (item,size,type)=>{

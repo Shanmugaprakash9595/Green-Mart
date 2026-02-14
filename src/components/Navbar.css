@@ -1,79 +1,94 @@
-/* MAIN NAVBAR */
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
-  border-bottom: 1px solid #ddd;
-  background: #fff;
-  position: relative;   /* important */
+  gap: 16px;
+  padding: 14px 24px;
 }
 
-/* LOGO */
 .logo {
+  color: #1b6d2a;
+  font-size: 24px;
+  font-weight: 700;
   text-decoration: none;
-  color: green;
-  font-size: 26px;
-  font-weight: bold;
-}
-
-/* SEARCH BAR */
-.search {
-  width: 40%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-/* RIGHT SECTION */
-.right {
-  display: flex;
-  align-items: center;
-}
-
-.right span,
-.right a {
-  margin-left: 20px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #222;
-  font-size: 18px;
-}
-
-/* ========================= */
-/* CATEGORY ITEMS FIX */
-/* ========================= */
-
-.items {
-  position: absolute;          /* nav-ku keezha varum */
-  left: 0;
-  bottom: -55px;               /* navbar keezha */
-  width: 100%;
-  background: #f9f9f9;
-  border-bottom: 1px solid #ddd;
-}
-
-/* REMOVE EXTRA NAV STYLE */
-.items nav {
-  width: 100%;
-}
-
-.items ul {
-  display: flex;
-  justify-content: center;     /* ⭐ CENTER ALIGN */
-  align-items: center;
-  gap: 20px;
-  list-style: none;
-  padding: 12px 30px;
-  margin: 0;
-}
-
-.items li {
-  cursor: pointer;
-  font-weight: 500;
   white-space: nowrap;
 }
 
-.items li:hover {
-  color: green;
+.search {
+  flex: 1;
+  max-width: 460px;
+  padding: 10px 12px;
+  border: 1px solid #cfd8cf;
+  border-radius: 8px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.right a {
+  color: #1f1f1f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.text-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.cart-count {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #e9f7ec;
+  color: #1b6d2a;
+}
+
+.items {
+  border-top: 1px solid #f0f0f0;
+  background: #fafcf8;
+}
+
+.items ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 10px 24px;
+}
+
+.items a {
+  color: #2b2b2b;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.items a:hover {
+  color: #1b6d2a;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .search {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+  }
 }

@@ -1,42 +1,54 @@
-.card{
-    background:#fff;
-    border:1px solid #ddd;
-    padding:20px;
-    border-radius:8px;
-    text-align:left;
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
 }
-.card img{
-    height:160px;
-    object-fit:contain;
-    width:100%;
-    cursor:pointer;
+
+.card img {
+  height: 160px;
+  object-fit: contain;
+  width: 100%;
+  cursor: pointer;
 }
-.off{
-    width: 40%;
-    background-color: orange;
-    color: white;
-    border-radius: 18px;
-    padding: 2px 0px 0px 4px;
-    font-size: 15px;
+
+.off {
+  width: 40%;
+  background-color: orange;
+  color: white;
+  border-radius: 18px;
+  padding: 2px 0 0 6px;
+  font-size: 14px;
 }
-.brand{
-    color:#666;
-    font-size:14px;
-    line-height: 25px;
+
+.brand {
+  color: #666;
+  font-size: 14px;
+  line-height: 22px;
 }
-.price span{
-    text-decoration:line-through;
-    color:#888;
+
+.price span {
+  text-decoration: line-through;
+  color: #888;
+  margin-left: 8px;
 }
-button{
-    margin:5px;
-    width:100%;
-    padding:8px;
-    border-radius:6px;
-    border:none;
-    cursor:pointer;
+
+.actions button {
+  margin: 5px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
 }
-.view{
-    background:orange;
-    color:#fff;
+
+.cart-btn {
+  background: #1d7a30;
+  color: #fff;
+}
+
+.view {
+  background: orange;
+  color: #fff;
 }

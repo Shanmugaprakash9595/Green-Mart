@@ -1,21 +1,19 @@
-import React from 'react'
-import "./ad.css"
+import "./ad.css";
+
+const base = import.meta.env.BASE_URL;
+const banners = ["ad1.webp", "ad2.webp", "ad3.webp", "ad4.webp"];
 
 function Ad() {
   return (
-    <div>
-        <div className='ad'>
-            <h2 className='ad-title'>Exclusive Offer</h2>
-            <div className='add-img-sec'>
-                <img src="ad1.webp" alt="" />
-                <img src="ad2.webp" alt="" />
-                <img src="ad3.webp" alt="" />
-                <img src="ad4.webp" alt="" />
-            </div>
-        </div>
-      
+    <div className="ad">
+      <h2 className="ad-title">Exclusive Offer</h2>
+      <div className="add-img-sec">
+        {banners.map((banner) => (
+          <img key={banner} src={`${base}${banner}`} alt={banner} />
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Ad
+export default Ad;
